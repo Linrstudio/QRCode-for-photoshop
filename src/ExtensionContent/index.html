@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./ext.js"></script>
+<script src="./lib/CSInterface-4.0.0.js"></script>
+
+<link id="ppstyle" rel="stylesheet" type="text/css" href="./style.css">
+<title>QRCode</title>
+</head>
+
+<body onLoad="onLoaded()">
+
+<div id="content" class="app-inner">
+	<div class="ui-tab">
+		<div class="ui-tab-body" id="tab_body">
+			<div class="ui-tab-cnt active" id="qrcode_cnt">
+				<ul>
+					<li class="fn-middle-all">
+						<input type="text" class="ui-input ui-input-url" value="http://qrobot.qq.com/" id="uri_txt" placeholder="请输入 URL" />
+						<input type="button" value="ok" class="ui-btn" id="ok_btn" />
+					</li>
+					<li class="fn-middle-all">
+						<input type="text" class="ui-input ui-input-size" value="168" id="size_txt" title="请输入宽度，单位 px" /> px 
+						容错级 <select class="ui-tooltips" id="qr_level" title="纠错等级">
+							<option value="H">H
+							<option value="M">M
+							<option value="Q">Q
+							<option value="L" selected="selected">L
+						</select>
+						<input type="checkbox" class="ui-checkbox" id="alpha_chk" /><label for="alpha_chk">透明</label>
+						<input type="checkbox" class="ui-checkbox hide" id="sl_chk" /><label for="sl_chk" class="hide">短网址</label>
+					</li>
+					<li class="qrcode-item"><a class="qrcode ui-tooltips js-qrcode" id="qrcode"></a></li>
+					<li>
+						<p class="ui-tips-ip">
+							<span id="ip_label"></span> <span id="ip_txt" class="ip-txt"></span>
+						</p>
+						<input type="text" class="hide" id="urlcn_txt">
+					</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<div class="ui-tips hide" id="tips"></div>
+
+<iframe src="about:blank" frameborder="0" id="hidden_frame" class="iframe"></iframe>
+<script src="lib/qrcode.min.js"></script>
+<script src="lib/jquery-1.9.1.js"></script>
+<script src="lib/main.js"></script>
+</body>
+</html>
